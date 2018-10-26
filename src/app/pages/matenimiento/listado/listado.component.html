@@ -37,9 +37,15 @@
             <a nz-button nzType="default" routerLink="/mantenimiento/preguntas/{{ 'texto' }}/{{ data.idPreg }}">
               <i nz-icon class="anticon anticon-edit"></i>
             </a>
-            <a nz-button nzType="danger">
+            <a
+              nz-popconfirm nzTitle="Are you sure delete this task?"
+              (nzOnConfirm)="deletePregunta( data.idPreg )"
+              nz-button nzType="danger">
               <i nz-icon class="anticon anticon-delete"></i>
             </a>
+            <!--<a nz-popconfirm nzTitle="Are you sure delete this task?"
+               (nzOnConfirm)="confirm()"
+               (nzOnCancel)="cancel()">Delete a task</a>-->
           </nz-button-group>
         </td>
       </tr>

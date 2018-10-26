@@ -38,4 +38,9 @@ export class EncuestaService {
     const url = '/api/pregunta';
     return this.httpClient.post( url, pregunta );
   }
+
+  deletePreguntaById( idpreg: number ) {
+    const url = '/api/pregunta/' + idpreg;
+    return this.httpClient.delete( url  );
+  }
 }

@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {EncuestaService} from '../../../service/service.index';
 import {pipe} from 'rxjs';
 import {Pregunta} from '../../../models/Pregunta.model';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-listado',
@@ -56,7 +57,8 @@ export class ListadoComponent implements OnInit, AfterViewInit {
   }
 
   constructor(
-    private encuestaService: EncuestaService
+    private encuestaService: EncuestaService,
+    private message: NzMessageService
   ) { }
 
   ngOnInit() {
@@ -75,6 +77,21 @@ export class ListadoComponent implements OnInit, AfterViewInit {
         ),
         () => {},
         () => {}
+      );
+  }
+
+  deletePregunta( idPreg: number ) {
+    this.encuestaService.deletePreguntaById( idPreg )
+      .subscribe(
+        ( success ) => {
+          this.message.create('success', `Pregunta eliminada Correctamente`);
+        },
+        ( err ) => {
+          this.message.create('error', `Error al eliminar la pregunta`);
+        },
+        () => {
+          this.getPregunta();
+        }
       );
   }
 
