@@ -23,7 +23,7 @@
         </th>-->
         <th>PREGUNTA</th>
         <th nzShowFilter [nzFilters]="filterAddressArray" (nzFilterChange)="filterAddressChange($event)">CUESTIONARIO</th>
-        <th style="max-width: 3rem">ACCIONES</th>
+        <th style="max-width: 4rem">ACCIONES</th>
       </tr>
       </thead>
       <tbody>
@@ -32,7 +32,7 @@
         *ngFor="let data of nzTable.data">
         <td>{{data.nomPre}}</td>
         <td>{{ data.cuestionario.test.nomTest + ' ' + data.cuestionario.esFactor }}</td>
-        <td style="max-width: 3rem">
+        <td style="max-width: 4rem">
           <nz-button-group>
             <a nz-button nzType="default" routerLink="/mantenimiento/preguntas/{{ 'texto' }}/{{ data.idPreg }}">
               <i nz-icon class="anticon anticon-edit"></i>

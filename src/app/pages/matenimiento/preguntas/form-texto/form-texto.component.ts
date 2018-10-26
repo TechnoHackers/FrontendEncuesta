@@ -44,7 +44,6 @@ export class FormTextoComponent implements OnInit {
       for (let i = 0; i <= this.alternativas.length - 1; i++ ) {
         this.alternativas[i].a = poner[i].a;
       }
-      console.log( this.Pregunta );
     });
   }
 

@@ -14,11 +14,11 @@ export class ListadoComponent implements OnInit, AfterViewInit {
 
   searchValue = '';
   filterAddressArray = [
-    { text: 'PMA Factor1', value: 'PMA factor1' },
-    { text: 'PMA Factor2', value: 'PMA factor2' },
-    { text: 'PMA Factor3', value: 'PMA factor3' },
-    { text: 'PMA Factor4', value: 'PMA factor4' },
-    { text: 'PMA Factor5', value: 'PMA factor5' },
+    { text: 'PMA Factor V', value: 'PMA factor V' },
+    { text: 'PMA Factor E', value: 'PMA factor E' },
+    { text: 'PMA Factor R', value: 'PMA factor R' },
+    { text: 'PMA Factor N', value: 'PMA factor N' },
+    { text: 'PMA Factor F', value: 'PMA factor F' },
     { text: 'PMB', value: 'PMB' }
   ];
   searchAddress = [];

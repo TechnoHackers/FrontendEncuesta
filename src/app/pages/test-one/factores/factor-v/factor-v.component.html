@@ -1,20 +1,23 @@
 <div nz-col [nzXs]="0" [nzLg]="6">
 </div>
 
-<div nz-col [nzXs]="24" style="background-color: #fff" [nzLg]="12" >
+<div class="background-page" nz-col [nzXs]="24" style="background-color: #fff" [nzLg]="12" >
   <nz-content >
     <div style=" padding: 2rem;">
 
-      <h2>FACTOR 1</h2>
-      <div style="margin-bottom: 1rem"><!-- *ngFor="let preg of data[0]; let i = index;"  -->
-        <!--<ng-container *ngIf="!pregunta.imagen">-->
+      <h2 style="padding: 0rem 0rem 1rem 0rem;text-decoration: underline">CUESTIONARIO PMA - FACTOR V</h2>
+      <div style="margin-bottom: 1rem" *ngFor="let preg of dataPreguntas; let i = index">
+        <!-- *ngFor="let preg of data[0]; let i = index;"  -->
         <div class="radio__container">
-          <h3 class="radio__container__titulo"><!-- {{ i + 1 }}. {{ preg.pregunta}} --> </h3><!-- {{ pregunta.preguntas }} -->
+          <h3 class="radio__container__titulo" class="u-font-size-big">
+            {{ i + 1 }}. {{ preg.nomPre }}</h3>
           <nz-radio-group class="radio__container__options" ><!-- [(ngModel)]="radioValue[i]" -->
-            <label nz-radio [ngStyle]="" nzValue="A"><!-- {{ preg.a1 }} --></label>
-            <label nz-radio [ngStyle]="" nzValue="B"><!-- {{ preg.a2 }} --></label>
-            <label nz-radio [ngStyle]="" nzValue="C"><!-- {{ preg.a3 }} --></label>
-            <label nz-radio [ngStyle]="" nzValue="D"><!-- {{ preg.a4 }} --></label>
+            <label nz-radio *ngIf="preg.a1" [ngStyle]="" class="u-font-size-medium " nzValue="A"> {{ preg.a1 }} </label>
+            <label nz-radio *ngIf="preg.a2" [ngStyle]="" class="u-font-size-medium" nzValue="B"> {{ preg.a2 }} </label>
+            <label nz-radio *ngIf="preg.a3" [ngStyle]="" class="u-font-size-medium" nzValue="C"> {{ preg.a3 }} </label>
+            <label nz-radio *ngIf="preg.a4" [ngStyle]="" class="u-font-size-medium" nzValue="D"> {{ preg.a4 }} </label>
+            <label nz-radio *ngIf="preg.a5" [ngStyle]="" class="u-font-size-medium" nzValue="E"> {{ preg.a5 }} </label>
+            <label nz-radio *ngIf="preg.a6" [ngStyle]="" class="u-font-size-medium" nzValue="F"> {{ preg.a6 }} </label>
           </nz-radio-group>
 
         </div>
