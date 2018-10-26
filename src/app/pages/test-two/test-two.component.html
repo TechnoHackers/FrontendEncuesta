@@ -1,0 +1,105 @@
+<div nz-col [nzXs]="0" [nzLg]="4">
+</div>
+<div nz-col [nzXs]="24" [nzLg]="16" >
+  <nz-content >
+    <div style="background:#fff; padding: 2rem;">
+      <div >
+        <span style="float: left">
+        <h1>INTELIGENCIAS MULTIPLES MIND</h1>
+      </span>
+        <span style="float: right">
+        <button nz-button nzType="primary" nzGhost>GUARDAR</button>
+      </span>
+      </div>
+
+      <ul class="hid-in-xs" style="margin-top: 3rem" nz-menu [nzMode]="'horizontal'" >
+          <li  nz-menu-item style="float: left"></li>
+          <li style="float: right" nz-menu-item >3</li>
+          <li style="float: right" nz-menu-item>2</li>
+          <li style="float: right" nz-menu-item>1</li>
+          <li style="float: right" nz-menu-item>0</li>
+      </ul>
+
+      <nz-list
+        class="demo-loadmore-list"
+        [nzDataSource]="list"
+        [nzItemLayout]="'horizontal'"
+        [nzLoading]="initLoading"
+        [nzRenderItem]="item"
+        [nzLoadMore]="loadMore">
+        <ng-template #item let-item>
+          <nz-list-item  [nzActions]="item.loading?[]:[ editAction ]"><!-- [nzContent]="item.loading?'':'content'" -->
+            <nz-skeleton [nzAvatar]="false" [nzActive]="true" [nzTitle]="false" [nzLoading]="item.loading">
+              <ng-template #editAction >
+
+                <ul class="vis-in-xs ul-modified">
+                  <li class="ul-modified--item"><strong>0</strong></li>
+                  <li class="ul-modified--item"><strong>1</strong></li>
+                  <li class="ul-modified--item"><strong>2</strong></li>
+                  <li class="ul-modified--item"><strong>3</strong></li>
+                </ul>
+
+                <nz-radio-group  [(ngModel)]="radioValue[item.id]">
+                  <label nz-radio [ngStyle]="" nzValue="0"></label>
+                  <label nz-radio [ngStyle]="" nzValue="1"></label>
+                  <label nz-radio [ngStyle]="" nzValue="2"></label>
+                  <label nz-radio [ngStyle]="" nzValue="3"></label>
+                </nz-radio-group>
+              </ng-template>
+              <!-- [nzTitle]="nzTitle" -->
+              <nz-list-item-meta
+                [nzDescription]="item.id + '. ' +item.pregunta">
+                <ng-template #nzTitle>
+                  <a href="https://ng.ant.design">Pregunta {{item.id}}</a>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-skeleton>
+          </nz-list-item>
+        </ng-template>
+        <!-- nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" -->
+        <!--<ng-template #loadMore>
+          <div class="loadmore">
+            <button nz-button *ngIf="!loadingMore" (click)="onLoadMore()">loading more</button>
+          </div>
+        </ng-template>-->
+      </nz-list>
+
+    </div>
+
+  </nz-content>
+</div>
+<div nz-col [nzXs]="0" [nzLg]="4">
+</div>
+<!-- <div *ngFor="let pregunta of listadoPreguntas; let i = index;" style="padding: 1rem">
+        <ng-container *ngIf="!pregunta.imagen">
+          <h3 class="">N° {{ pregunta.preguntas }}</h3>
+          <nz-radio-group [(ngModel)]="radioValue[i]">
+            <label nz-radio [ngStyle]="" nzValue="A">Option A</label>
+            <label nz-radio [ngStyle]="" nzValue="B">Option B</label>
+            <label nz-radio [ngStyle]="" nzValue="C">Option C</label>
+            <label nz-radio [ngStyle]="" nzValue="D">Option D</label>
+          </nz-radio-group>
+        </ng-container>
+
+        <ng-container *ngIf="pregunta.imagen">
+          <h3 class="">Pregunta N° {{ pregunta.preguntas }}</h3>
+          <nz-card
+            style="width: 300px;margin-top: 16px">
+            <nz-card-meta [nzAvatar]="avatarTemplate"
+                          nzDescription="Aquí la pregunta"></nz-card-meta>
+          </nz-card>
+          <ng-template #avatarTemplate>
+            <nz-avatar nzSrc="assets/img/question.png"></nz-avatar>
+          </ng-template>
+          <nz-radio-group style="margin-top: 1rem;" [(ngModel)]="radioValue[i]">
+            <label nz-radio [ngStyle]="" nzValue="A">Option A</label>
+            <label nz-radio [ngStyle]="" nzValue="B">Option B</label>
+            <label nz-radio [ngStyle]="" nzValue="C">Option C</label>
+            <label nz-radio [ngStyle]="" nzValue="D">Option D</label>
+          </nz-radio-group>
+        </ng-container>
+
+      </div>
+      <div style="text-align: center; margin-top: 1rem;">
+        <nz-pagination [nzPageIndex]="3" [nzTotal]="50"></nz-pagination>
+      </div> -->

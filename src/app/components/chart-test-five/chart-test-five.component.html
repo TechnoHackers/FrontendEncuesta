@@ -1,0 +1,8 @@
+<div>
+  <v-chart [forceFit]="forceFit" [height]="height" [data]="data">
+    <v-coord type="rect" direction="LB"></v-coord>
+    <v-tooltip></v-tooltip>
+    <v-axis dataKey="coutry" [label]="label"></v-axis>
+    <v-bar position="country*population"></v-bar>
+  </v-chart>
+</div>

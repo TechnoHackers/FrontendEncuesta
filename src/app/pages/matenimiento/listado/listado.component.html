@@ -1,0 +1,52 @@
+<div nz-col [nzXs]="0" [nzLg]="6">
+</div>
+<div nz-col [nzXs]="24" [nzLg]="12">
+  <div class="container-table">
+    <div class="container-table__thead">
+      <h1>Listado de Preguntas</h1>
+    </div>
+    <nz-table #nzTable
+              nzBordered
+              class="tbl"
+              [nzData]="displayData">
+      <thead >
+      <tr>
+        <!--<th nzCustomFilter>
+          Name
+          <nz-dropdown nzTrigger="click" [nzClickHide]="false" #dropdown>
+            <i nz-icon type="smile-o" class="ant-table-filter-icon" [class.ant-table-filter-open]="dropdown.nzVisible" nz-dropdown></i>
+            <div class="custom-filter-dropdown">
+              <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue">
+              <button nz-button [nzType]="'primary'" (click)="search()">Search</button>
+            </div>
+          </nz-dropdown>
+        </th>-->
+        <th>PREGUNTA</th>
+        <th nzShowFilter [nzFilters]="filterAddressArray" (nzFilterChange)="filterAddressChange($event)">CUESTIONARIO</th>
+        <th style="max-width: 3rem">ACCIONES</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        style="border: 3px solid orangered;"
+        *ngFor="let data of nzTable.data">
+        <td>{{data.nomPre}}</td>
+        <td>{{ data.cuestionario.test.nomTest + ' ' + data.cuestionario.esFactor }}</td>
+        <td style="max-width: 3rem">
+          <nz-button-group>
+            <a nz-button nzType="default" routerLink="/mantenimiento/preguntas/{{ 'texto' }}/{{ data.idPreg }}">
+              <i nz-icon class="anticon anticon-edit"></i>
+            </a>
+            <a nz-button nzType="danger">
+              <i nz-icon class="anticon anticon-delete"></i>
+            </a>
+          </nz-button-group>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+
+</div>
+<div nz-col [nzXs]="0" [nzLg]="6">
+</div>

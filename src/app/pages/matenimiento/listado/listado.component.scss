@@ -1,0 +1,40 @@
+.custom-filter-dropdown {
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+
+[nz-input] {
+  width: 130px;
+  margin-right: 8px;
+}
+
+.highlight {
+  color: #f50;
+}
+
+.container-table {
+  box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+  border: 3px solid #55c57a;
+
+  &__thead {
+    padding: 1rem;
+    background-color: #55c57a;
+
+    h1 {
+      color: #ffffff;
+    }
+
+  }
+
+  [nzTable] {
+    padding: 1rem;
+  }
+
+}
+
+
+.tbl {
+  font-size: 25px;
+}

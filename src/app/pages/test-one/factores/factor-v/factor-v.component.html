@@ -1,0 +1,30 @@
+<div nz-col [nzXs]="0" [nzLg]="6">
+</div>
+
+<div nz-col [nzXs]="24" style="background-color: #fff" [nzLg]="12" >
+  <nz-content >
+    <div style=" padding: 2rem;">
+
+      <h2>FACTOR 1</h2>
+      <div style="margin-bottom: 1rem"><!-- *ngFor="let preg of data[0]; let i = index;"  -->
+        <!--<ng-container *ngIf="!pregunta.imagen">-->
+        <div class="radio__container">
+          <h3 class="radio__container__titulo"><!-- {{ i + 1 }}. {{ preg.pregunta}} --> </h3><!-- {{ pregunta.preguntas }} -->
+          <nz-radio-group class="radio__container__options" ><!-- [(ngModel)]="radioValue[i]" -->
+            <label nz-radio [ngStyle]="" nzValue="A"><!-- {{ preg.a1 }} --></label>
+            <label nz-radio [ngStyle]="" nzValue="B"><!-- {{ preg.a2 }} --></label>
+            <label nz-radio [ngStyle]="" nzValue="C"><!-- {{ preg.a3 }} --></label>
+            <label nz-radio [ngStyle]="" nzValue="D"><!-- {{ preg.a4 }} --></label>
+          </nz-radio-group>
+
+        </div>
+      </div>
+      <button nz-button nzType="primary" >Primary</button>
+
+    </div>
+  </nz-content>
+</div>
+
+<div nz-col [nzXs]="0" style="text-align: center" [nzLg]="6">
+  <app-circle-progress nombre="FACTORV" duracion="4" restar="0.38"></app-circle-progress> <!-- 4 minutos -->
+</div>

@@ -1,0 +1,29 @@
+<div nz-col [nzXs]="0" [nzLg]="6">
+
+</div>
+
+<div nz-col [nzXs]="24" [nzLg]="12" >
+    <nz-card nzType="inner" style="margin-top:16px;"
+             [nzExtra]="extraTemplate"
+             nzBordered
+             nzTitle="Mantenimiento de Preguntas">
+      <ng-template #extraTemplate>
+        <nz-radio-group
+          [nzSize]="'small'"
+          [(ngModel)]="pregTextImagen">
+          <label nz-radio-button [nzValue]="true">Texto</label>
+          <label nz-radio-button [nzValue]="false">Imagen</label>
+        </nz-radio-group>
+      </ng-template>
+
+      <div nz-row>
+        <app-form-texto *ngIf="pregTextImagen" ></app-form-texto>
+        <app-form-imagenes *ngIf="!pregTextImagen"></app-form-imagenes>
+      </div>
+
+    </nz-card>
+
+</div>
+
+<div nz-col [nzXs]="0" [nzLg]="6">
+</div>

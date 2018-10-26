@@ -1,0 +1,39 @@
+<!--<div>
+  <v-chart [forceFit]="forceFit"
+           [height]="height"
+           [data]="data"
+           [onClick]="onclickeo"
+           [scale]="scale">
+    <v-tooltip ></v-tooltip>
+    <v-axis ></v-axis>
+    <v-line position="year*value"></v-line>
+    <v-point position="year*value" shape="circle"></v-point>
+  </v-chart>
+</div>-->
+
+<div id="pie-chart-parent">
+  <h1>Gráfico de Test PMA - Anderson Taipe Reyes</h1>
+  <hr>
+  <br>
+  <ngx-charts-line-chart
+    style="width: 100%; height: 100%"
+    [scheme]="colorScheme"
+    [results]="multi"
+    [gradient]="gradient"
+    [schemeType]="schemeType"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [autoScale]="autoScale"
+    [xScaleMin]="xscaleMin"
+    [xScaleMax]="xscaleMax"
+    [yScaleMin]="yScaleMin"
+    [yScaleMax]="yScaleMax"
+    [rangeFillOpacity]="range"
+    (select)="onSelect($event)">
+  </ngx-charts-line-chart>
+</div>

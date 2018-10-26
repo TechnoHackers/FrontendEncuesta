@@ -1,0 +1,20 @@
+nz-progress {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.radio__container {
+  border: 1px solid #e2e2e2;
+  padding: 1rem;
+  border-radius: 3px;
+
+  &__titulo {
+    padding: 0.3rem;
+  }
+
+  &__options {
+    padding: 0.5rem;
+  }
+}
+

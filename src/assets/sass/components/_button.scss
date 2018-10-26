@@ -1,0 +1,33 @@
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  border: .5rem;
+  height: 2rem;
+  display: inline-block;
+  transition: all .2s;
+  border-radius: .3rem;
+  padding: 1rem 4rem 2rem 4rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY( - 3px );
+    box-shadow: 0 1rem 2rem rgba(#000000,.2);
+
+    /*&::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+    }*/
+  }
+
+  &:active {
+    background-color: orangered;
+    transform: translateY( .3rem );
+    border: none;
+  }
+
+  &--green {
+    background-color: #55c57a;
+    color: #ffffff;
+  }
+
+}

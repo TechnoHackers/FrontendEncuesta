@@ -1,0 +1,195 @@
+<!-- nzSpan="6"
+nzSpan="12"
+nzSpan="6" -->
+<div nz-col [nzXs]="0" [nzLg]="6">
+
+  <div style="float: right">
+    <nz-tabset
+      [nzTabPosition]="nzTabPosition"
+      [(nzSelectedIndex)]="selectedIndex"
+      (nzSelectChange)="log([$event])">
+      <nz-tab
+        *ngFor="let tab of tabs; let i = index;"
+        [nzTitle]="tab.name"
+        (nzSelect)="log(['select',tab])"
+        (nzClick)="log(['click',tab])"
+        [nzDisabled]="i == 1 ? true: false"
+        (nzDeselect)="log(['deselect',tab])">
+        <!--{{ tab.content }}-->
+        <!-- [nzDisabled]="i == 2 ? true: false" -->
+      </nz-tab>
+    </nz-tabset>
+  </div>
+
+</div>
+
+<div nz-col [nzXs]="24" style="background-color: #fff" [nzLg]="12" >
+  <nz-content >
+    <div style=" padding: 2rem;">
+
+        <h1>CUADERNILLO PMA</h1>
+
+      <div *ngIf="selectedIndex == 0">
+        <h2>FACTOR 1</h2>
+        <div *ngFor="let preg of data[0]; let i = index;" style="margin-bottom: 1rem">
+          <!--<ng-container *ngIf="!pregunta.imagen">-->
+          <div class="radio__container">
+            <h3 class="radio__container__titulo">{{ i + 1 }}. {{ preg.pregunta}} </h3><!-- {{ pregunta.preguntas }} -->
+            <nz-radio-group class="radio__container__options" [(ngModel)]="radioValue[i]"><!-- [(ngModel)]="radioValue[i]" -->
+              <label nz-radio [ngStyle]="" nzValue="A">{{ preg.a1 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="B">{{ preg.a2 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="C">{{ preg.a3 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="D">{{ preg.a4 }}</label>
+            </nz-radio-group>
+
+            <!--<br>
+            <p class="" style="padding-top: 0.5rem;">
+              Una de las cuatro palabras significa los mismo que GRUESO. Esta palabra es
+              Gordo. Gordo es la respuesta B.
+            </p>-->
+          </div>
+        </div>
+        <button nz-button nzType="primary" (click)="guardarRadios( radioValue )">Primary</button>
+      </div>
+
+      <div *ngIf="selectedIndex == 1">
+        <h2>FACTOR 2</h2>
+        <div *ngFor="let preg of data[1]; let i = index;" style="margin-bottom: 1rem">
+          <!--<ng-container *ngIf="!pregunta.imagen">-->
+          <div style="border: 1px solid #e2e2e2; padding: 1rem; border-radius: 3px">
+            <h3 class="">{{ i + 1 }}. {{ preg.pregunta}} </h3><!-- {{ pregunta.preguntas }} -->
+            <nz-radio-group ><!-- [(ngModel)]="radioValue[i]" -->
+              <label nz-radio [ngStyle]="" nzValue="A">{{ preg.a1 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="B">{{ preg.a2 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="C">{{ preg.a3 }}</label>
+              <label nz-radio [ngStyle]="" nzValue="D">{{ preg.a4 }}</label>
+            </nz-radio-group>
+
+            <br>
+            <p class="" style="padding-top: 0.5rem;">
+              Una de las cuatro palabras significa los mismo que GRUESO. Esta palabra es
+              Gordo. Gordo es la respuesta B.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf="selectedIndex == 2">
+      <h2>FACTOR 3</h2>
+      <div *ngFor="let preg of data[2]; let i = index;" style="margin-bottom: 1rem">
+        <!--<ng-container *ngIf="!pregunta.imagen">-->
+        <div style="border: 1px solid #e2e2e2; padding: 1rem; border-radius: 3px">
+          <h3 class="">{{ i + 1 }}. {{ preg.pregunta}} </h3><!-- {{ pregunta.preguntas }} -->
+          <nz-radio-group ><!-- [(ngModel)]="radioValue[i]" -->
+            <label nz-radio [ngStyle]="" nzValue="A">{{ preg.a1 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="B">{{ preg.a2 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="C">{{ preg.a3 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="D">{{ preg.a4 }}</label>
+          </nz-radio-group>
+
+          <br>
+          <p class="" style="padding-top: 0.5rem;">
+            Una de las cuatro palabras significa los mismo que GRUESO. Esta palabra es
+            Gordo. Gordo es la respuesta B.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div *ngIf="selectedIndex == 3">
+      <h2>FACTOR 4</h2>
+      <div *ngFor="let preg of data[3]; let i = index;" style="margin-bottom: 1rem">
+        <!--<ng-container *ngIf="!pregunta.imagen">-->
+        <div style="border: 1px solid #e2e2e2; padding: 1rem; border-radius: 3px">
+          <h3 class="">{{ i + 1 }}. {{ preg.pregunta}} </h3><!-- {{ pregunta.preguntas }} -->
+          <nz-radio-group ><!-- [(ngModel)]="radioValue[i]" -->
+            <label nz-radio [ngStyle]="" nzValue="A">{{ preg.a1 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="B">{{ preg.a2 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="C">{{ preg.a3 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="D">{{ preg.a4 }}</label>
+          </nz-radio-group>
+
+          <br>
+          <p class="" style="padding-top: 0.5rem;">
+            Una de las cuatro palabras significa los mismo que GRUESO. Esta palabra es
+            Gordo. Gordo es la respuesta B.
+          </p>
+        </div>
+      </div>
+      </div>
+
+
+      <div *ngIf="selectedIndex == 4">
+      <h2>FACTOR 5</h2>
+      <div *ngFor="let preg of data[4]; let i = index;" style="margin-bottom: 1rem">
+        <!--<ng-container *ngIf="!pregunta.imagen">-->
+        <div style="border: 1px solid #e2e2e2; padding: 1rem; border-radius: 3px">
+          <h3 class="">{{ i + 1 }}. {{ preg.pregunta}} </h3><!-- {{ pregunta.preguntas }} -->
+          <nz-radio-group ><!-- [(ngModel)]="radioValue[i]" -->
+            <label nz-radio [ngStyle]="" nzValue="A">{{ preg.a1 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="B">{{ preg.a2 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="C">{{ preg.a3 }}</label>
+            <label nz-radio [ngStyle]="" nzValue="D">{{ preg.a4 }}</label>
+          </nz-radio-group>
+
+          <br>
+          <p class="" style="padding-top: 0.5rem;">
+            Una de las cuatro palabras significa los mismo que GRUESO. Esta palabra es
+            Gordo. Gordo es la respuesta B.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <!--<div style="border: 1px solid #e2e2e2; padding: 0.1rem 1rem 1rem 1rem; border-radius: 3px">
+        <h3 class="" style="padding-top: 1rem">5. ANCIANO</h3>&lt;!&ndash; {{ pregunta.preguntas }} &ndash;&gt;
+        <nz-card
+          style="width: 300px;margin-top: 16px">
+          <nz-card-meta [nzAvatar]="avatarTemplate"
+                        nzDescription="E2 ANCIANO"></nz-card-meta>
+        </nz-card>
+        <ng-template #avatarTemplate>
+          <nz-avatar nzSrc="assets/img/question.png"></nz-avatar>
+        </ng-template>
+        <nz-radio-group style="margin-top: 1rem;" >&lt;!&ndash; [(ngModel)]="radioValue[i]" &ndash;&gt;
+          <label nz-radio [ngStyle]="" nzValue="A">Seco</label>
+          <label nz-radio [ngStyle]="" nzValue="B">Largo</label>
+          <label nz-radio [ngStyle]="" nzValue="C">Feliz</label>
+          <label nz-radio [ngStyle]="" nzValue="D">Viejo</label>
+        </nz-radio-group>
+      </div>-->
+        <!--</ng-container>-->
+
+        <!--<ng-container *ngIf="pregunta.imagen">-->
+
+        <!--</ng-container>-->
+
+      <!--</div>-->
+      <!--<div style="text-align: center; margin-top: 1rem;">
+        <nz-pagination [nzPageIndex]="3" [nzTotal]="50"></nz-pagination>
+      </div>-->
+    </div>
+
+  </nz-content>
+</div>
+
+<div nz-col [nzXs]="0" style="text-align: center" [nzLg]="6">
+  <h2>Tiempo Restante: </h2>
+
+  <div *ngIf="selectedIndex == 0">
+    <app-circle-progress nombre="FACTORV" duracion="5" restar="0.38"></app-circle-progress> <!-- 4 minutos -->
+  </div>
+
+  <!--<div *ngIf="selectedIndex == 1">
+    <app-circle-progress nombre="FACTORE" duracion="0.0833" restar="0.334"></app-circle-progress> &lt;!&ndash; 5 minutos &ndash;&gt;
+  </div>-->
+
+</div>
+
+<!--<nz-progress id="circle"
+               [nzPercent]="percent"
+               [nzShowInfo]="bandera"
+               [nzFormat]="formatoProgress"
+               nzType="circle"
+               [nzStatus]="status"></nz-progress>-->

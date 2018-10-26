@@ -1,0 +1,41 @@
+<ul nz-menu [nzMode]="'horizontal'" style="background-color: #2998ff;">
+  <li style="color: #fff" nz-menu-item  (click)="redirect( 'principalT1/main' )" routerLinkActive><i class="anticon anticon-solution"></i> TEST 1</li>
+  <li style="color: #fff" nz-menu-item routerLink="/test2" (click)="redirect( 'test2' )" routerLinkActive>
+    <i class="anticon anticon-solution"></i>TEST 2</li>
+  <li style="color: #fff" nz-menu-item routerLink="/test3" (click)="redirect( 'test3' )" routerLinkActive>
+    <i nz-icon class="anticon anticon-delete"></i>TEST 3
+    <!--<span title><i class="anticon anticon-setting"></i> TEST 3</span>
+    <ul>
+      <li nz-menu-group>
+        <span title>Item 1</span>
+        <ul>
+          <li nz-menu-item>Option 1</li>
+          <li nz-menu-item>Option 2</li>
+        </ul>
+      </li>
+      <li nz-menu-group>
+        <span title>Item 2</span>
+        <ul>
+          <li nz-menu-item>Option 3</li>
+          <li nz-menu-item>Option 4</li>
+          <li nz-submenu>
+            <span title>Sub Menu</span>
+            <ul>
+              <li nz-menu-item nzDisabled>Option 5</li>
+              <li nz-menu-item>Option 6</li>
+            </ul>
+          </li>
+          <li nz-submenu nzDisabled>
+            <span title>Disabled Sub Menu</span>
+            <ul>
+              <li nz-menu-item>Option 5</li>
+              <li nz-menu-item>Option 6</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>-->
+  </li>
+  <li style="color: #fff" nz-menu-item  (click)="redirect( 'test4' )" routerLinkActive><i class="anticon anticon-solution"></i>TEST 4</li>
+  <li style="color: #fff" nz-menu-item  (click)="redirect( 'test5' )" routerLinkActive><i class="anticon anticon-solution"></i>TEST 5</li>
+</ul>

@@ -1,0 +1,67 @@
+<form #formaTexto="ngForm" (ngSubmit)="guardarTexto( formaTexto )">
+  <div nz-row>
+    <div nz-col [nzLg]="16">
+      <div nz-row nzType="flex" nzJustify="start">
+        <div nz-col [nzXs]="12" [nzLg]="12">
+          <p>Pregunta</p>
+        </div>
+      </div>
+      <div nz-row>
+        <div nz-col [nzLg]="23">
+          <input
+            type="text"
+            name="nomPre"
+            [(ngModel)]="Pregunta.nomPre"
+            nz-input>
+
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzLg]="8">
+      <p>Cuestionario</p>
+      <nz-select style="width: 200px;"
+                 nzShowSearch
+                 nzAllowClear
+                 [(ngModel)]="Pregunta.idCues"
+                 nzPlaceHolder="Elegir Cuestionario"
+                 name="idCues" >
+        <nz-option nzCustomContent
+                   *ngFor="let cuest of cuestionario"
+                   [nzLabel]="cuest.test.nomTest + ' ' + cuest.esFactor" [nzValue]="cuest.idCuest">
+          <i nz-icon type="windows"></i> {{ cuest.test ? cuest.test.nomTest : cuest.test }} {{ cuest.esFactor }}
+        </nz-option>
+      </nz-select>
+
+    </div>
+
+  </div>
+
+  <br>
+  <nz-divider nzDashed [nzText]="text">
+    <ng-template #text><i nz-icon class="anticon anticon-plus"></i> Alternativas</ng-template>
+  </nz-divider>
+
+  <div  nz-row>
+    <div nz-col [nzLg]="24" *ngFor="let alter of alternativas; let i = index">
+      <div nz-row nzType="flex" nzJustify="start">
+        <div nz-col [nzLg]="4">
+          <p>{{ alter.nombre }}</p>
+        </div>
+        <div nz-col [nzLg]="8">
+          <input ngDefaultControl
+                 [name]="'a' + ( i + 1)"
+                 [(ngModel)]="alter.a"
+                 type="text" nz-input>
+          <!-- [(ngModel)]="alter[ i ]" -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="u-margin-top-medium">
+    <div nz-row nzType="flex" nzJustify="end">
+      <button nz-button nzType="danger">CANCELAR</button>
+      <button nz-button nzType="default" type="submit">GUARDAR</button>
+    </div>
+  </div>
+</form>
